@@ -1,0 +1,1103 @@
+projectName: Food Order
+description: Thesis
+sut: http://127.0.0.1:8000/
+features:
+  - name: Start
+    order: 0
+    description: ''
+    documentation: ''
+    selectors: >-
+      id_username: admin
+
+      id_password: admin123
+
+      Login("css:#login-box > div > div > div:nth-child(2) > form >
+      div:nth-child(4) > button"): #pressed; Login
+
+      Food Ordering System(css:#topNav > a): Food Ordering System; #pressed
+
+      Order Salad("css:body > div > div > div:nth-child(3) > div > center > a"):
+      #pressed
+
+      $ 45.00(css:#regular_salad_card-3 > button): #pressed
+
+      Menu("css:#navbarText > ul > li:nth-child(1) > a"): #pressed
+
+
+      cart_button: #pressed; "1 My Cart "; " My Cart "; #contain Cart
+
+      "Instructions:"("css:body > div > div > div > div > div:nth-child(1) >
+      fieldset > legend"): "Instructions:"
+
+      checkout_button: #pressed
+
+      cart_heading: Cart is empty!; #non-present Cart is empty!; Check out
+
+      Order Platters("css:body > div > div > div:nth-child(4) > div > center >
+      a"): #pressed
+
+      55.00(css:#1-1 > strong): #pressed
+
+      Choose one of the Platters(css:body > div > div > div > div > h4):
+      #contain Choose; #non-present Cart is empty!
+
+      Order Pizza("css:body > div > div > div:nth-child(1) > div > center > a"):
+      #pressed
+
+      submit_toppings: #pressed
+
+      Choose one of the Pizza's 🍕("css:body > div:nth-child(2) > div > div >
+      h4"): #contain Choose
+
+      Order Subs("css:body > div > div > div:nth-child(2) > div > center > a"):
+      #pressed
+
+      total: $ 525.00; $ 195.00; $ 140.00; $ 620.00; $ 675.00; $ 45.00; $
+      225.00; $ 645.00; $ 550.00;  $ 580.00; $ 75.00; $ 720.00; $ 100.00;
+      #pressed;  $ 130.00; $ 170.00
+
+      Pizza("css:#login-box > div > div > div:nth-child(4) > a > strong"):
+      #pressed
+
+      login-box: #contain Login
+
+      Burger("css:#login-box > div > div > div:nth-child(5) > a > strong"):
+      #pressed
+
+      Salad("css:#login-box > div > div > div:nth-child(6) > a > strong"):
+      #pressed
+
+      Platters("css:#login-box > div > div > div:nth-child(7) > a > strong"):
+      #pressed
+
+      Pasta("css:#login-box > div > div > div:nth-child(8) > a > strong"):
+      #pressed
+
+      Our Location("css:#navbarText > ul > li:nth-child(2) > a"): #pressed
+
+      "Located on There street beside of XYZ Bu..."("css:body > div > div > div
+      > div > div:nth-child(2)"): """
+
+
+                          
+                              Located on There street beside of XYZ Building.
+                              Parking Lot is at the back.
+                          
+
+                      
+      """
+
+      "Pizza Lorem ipsum dolor sit amet, consec..."(css:body > div > div):
+      #contain Pizza
+
+      Our Shop Hours("css:body > div > div > div > div > div:nth-child(1) >
+      h3"): Our Shop Hours
+
+      Shop Hours("css:#navbarText > ul > li:nth-child(3) > a"): #pressed
+
+      Contact Us("css:#navbarText > ul > li:nth-child(4) > a"): #pressed
+
+      Our Contact Details("css:body > div > div > div > div > div:nth-child(1) >
+      h3 > u"): Our Contact Details
+
+      View Orders("css:#navbarText > span > a:nth-child(1)"): #pressed
+
+      "Click the Order Row (Red Filled Row) to ..."(css:body > div > div > div >
+      div > div > fieldset > ul > li): "Click the Order Row (Red Filled Row) to
+      mark it as delivered"
+
+      Logout(css:#navbarText > span > button): #pressed
+
+      cart-count: 1; 3; 4; 5; 6; 2; 0
+
+      Small - Sushi Platter("css:#cart_body > tr:nth-child(2) >
+      td:nth-child(2)"): #pressed
+
+      Small Sub - Beef Burger("css:#cart_body > tr:nth-child(3) >
+      td:nth-child(2)"): #pressed
+
+      Small Sicillian pizza with("css:#cart_body > tr:nth-child(4) >
+      td:nth-child(2)"): #pressed
+
+      Vegan Salad 1("css:#cart_body > tr:nth-child(6) > td:nth-child(2)"):
+      #pressed
+
+      "Food Ordering System Menu Our Location S..."(css:body): #contain Choose
+
+      Pasta Macaroni("css:#cart_body > tr:nth-child(5) > td:nth-child(2)"):
+      #pressed
+
+      "Click the Item row to remove item from c..."("css:body > div > div > div
+      > div > div:nth-child(1) > fieldset > ul > li:nth-child(1)"): "Click the
+      Item row to remove item from cart list. "
+
+      "Instructions: Click the Item row to remo..."(css:body > div > div > div >
+      div): #non-present
+
+      not delivered("css:#orders_table > tr:nth-child(1) > td:nth-child(4)"):
+      not delivered; delivered
+
+      Vegan Salad("css:#cart_body > tr > td:nth-child(2)"): #pressed
+
+      admin("css:#orders_table > tr:nth-child(1) > td:nth-child(2)"): #pressed
+
+      Order Pasta("css:body > div > div > div:nth-child(5) > div > center > a"):
+      #pressed
+
+      $ 95.00(css:#reg_pasta_card-3 > button): #pressed
+    constraints: >-
+
+      login:
+
+      WHEN id_username IS admin
+
+      WHEN id_password IS admin123
+
+      WHEN Login IS #pressed
+
+
+      Logged in:
+
+      THEN Food Ordering System IS Food Ordering System
+
+
+      add salad:
+
+      WHEN Menu IS #pressed
+
+      WHEN Order Salad IS #pressed
+
+      WHEN $ 45.00 IS #pressed
+
+
+
+
+
+
+      my card:
+
+      WHEN cart_button IS #pressed
+
+      THEN "Instructions:" IS "Instructions:"
+
+
+      done:
+
+      WHEN checkout_button IS #pressed
+
+
+      empty card:
+
+      THEN cart_heading IS Cart is empty!
+
+
+      add platters:
+
+      WHEN Menu IS #pressed
+
+      WHEN Order Platters IS #pressed
+
+      WHEN 55.00 IS #pressed
+
+
+      1 platters added:
+
+      THEN Choose one of the Platters IS #contain Choose
+
+
+      1 salad, 1 pasta and 1 platters in card:
+
+      THEN total IS $ 195.00
+
+
+      add pizza:
+
+      WHEN Menu IS #pressed
+
+      WHEN Order Pizza IS #pressed
+
+      WHEN 55.00 IS #pressed
+
+      WHEN submit_toppings IS #pressed
+
+
+      1 pizza added:
+
+      THEN Choose one of the Pizza's 🍕 IS #contain Choose
+
+
+
+
+      1 burger added:
+
+      THEN Choose one of the Platters IS #contain Choose
+
+
+      1 salad, 1 pizza and 1 burger in card:
+
+      THEN total IS $ 525.00
+
+
+      1 salad, 1 burger, 1 pasta and 1 pizza in card:
+
+      THEN total IS $ 620.00
+
+
+      1 salad, 1 platters, 1 burger, 1 pizza and 1 pasta in card:
+
+      THEN total IS $ 675.00
+
+
+      2 salad, 1 platters, 1 burger, 1 pizza and 1 pasta in card:
+
+      THEN total IS $ 720.00
+
+
+      1 salad in card:
+
+      THEN total IS $ 45.00
+
+
+      1 salad, 1 pasta, 1 burger and 1 platters in card:
+
+      THEN total IS $ 225.00
+
+
+      1 salad, 1 pasta, 1 platters and 1 pizza in card:
+
+      THEN total IS $ 645.00
+
+
+      1 salad, 1 pizza and 1 platters in card:
+
+      THEN total IS $ 550.00
+
+
+      1 salad and 1 burger in card:
+
+      THEN total IS $ 75.00
+
+
+      1 salad, 1 platters, 1 burger and 1 pizza in card:
+
+      THEN total IS $ 580.00
+
+
+      add pizza no auth:
+
+      WHEN Pizza IS #pressed
+
+
+      could not add:
+
+      THEN login-box IS #contain Login
+
+
+      add burger no auth:
+
+      WHEN Burger IS #pressed
+
+
+      add salad no auth:
+
+      WHEN Salad IS #pressed
+
+
+      add platters no auth:
+
+      WHEN Platters IS #pressed
+
+
+      add pasta no auth:
+
+      WHEN Pasta IS #pressed
+
+
+      go to locations:
+
+      WHEN Our Location IS #pressed
+
+
+      gone to location page:
+
+      THEN "Located on There street beside of XYZ Bu..." IS """
+
+
+                          
+                              Located on There street beside of XYZ Building.
+                              Parking Lot is at the back.
+                          
+
+                      
+      """
+
+
+      go to home:
+
+      WHEN Food Ordering System IS #pressed
+
+
+      gone to home page:
+
+      THEN "Pizza Lorem ipsum dolor sit amet, consec..." IS #contain Pizza
+
+
+
+      gone to hours page:
+
+      THEN Our Shop Hours IS Our Shop Hours
+
+
+      go to hours:
+
+      WHEN Shop Hours IS #pressed
+
+
+      go to contacts:
+
+      WHEN Contact Us IS #pressed
+
+
+      gone to contacts page:
+
+      THEN Our Contact Details IS Our Contact Details
+
+
+      go to orders:
+
+      WHEN View Orders IS #pressed
+
+
+      gone to orders page:
+
+      THEN "Click the Order Row (Red Filled Row) to ..." IS "Click the Order Row
+      (Red Filled Row) to mark it as delivered"
+
+
+      go to cart:
+
+      WHEN cart_button IS #pressed
+
+
+      go to login:
+
+      WHEN Logout IS #pressed
+
+
+      gone to login page:
+
+      THEN Login IS Login
+
+
+      the count is 1:
+
+      THEN cart-count IS 1
+
+
+      the count is 0:
+
+      THEN cart-count IS 0
+
+
+      the count is 3:
+
+      THEN cart-count IS 3
+
+
+      the count is 4:
+
+      THEN cart-count IS 4
+
+
+      the count is 5:
+
+      THEN cart-count IS 5
+
+
+      the count is 6:
+
+      THEN cart-count IS 6
+
+
+
+      1 salad and 1 pasta in card:
+
+      THEN total IS $ 140.00
+
+
+      check count:
+
+      THEN cart_button IS #contain Cart
+
+
+      the count is 2:
+
+      THEN cart-count IS 2
+
+
+
+      delete platters:
+
+      WHEN cart_button IS #pressed
+
+      WHEN Small - Sushi Platter IS #pressed
+
+
+
+
+      delete burger:
+
+      WHEN cart_button IS #pressed
+
+      WHEN Small Sub - Beef Burger IS #pressed
+
+
+      1 salad and 1 platters in card:
+
+      THEN total IS $ 100.00
+
+
+      delete pizza:
+
+      WHEN cart_button IS #pressed
+
+      WHEN Small Sicillian pizza with IS #pressed
+
+
+      1 salad, 1 platters and 1 burger in card:
+
+      WHEN total IS #pressed
+
+      THEN total IS $ 130.00
+
+
+      delete 2nd salad:
+
+      WHEN cart_button IS #pressed
+
+      WHEN Vegan Salad 1 IS #pressed
+
+
+      1 salad added:
+
+      THEN "Food Ordering System Menu Our Location S..." IS #contain Choose
+
+
+
+      1 pasta added:
+
+      THEN Choose one of the Platters IS #contain Choose
+
+
+      delete pasta:
+
+      WHEN cart_button IS #pressed
+
+      WHEN Pasta Macaroni IS #pressed
+
+
+      check empty:
+
+      THEN "Instructions:" IS "Instructions:"
+
+
+
+      not empty card:
+
+      THEN cart_heading IS Check out
+
+
+      check out:
+
+      WHEN checkout_button IS #pressed
+
+
+      ordered:
+
+      THEN cart_heading IS Cart is empty!
+
+
+
+      delete salad:
+
+      WHEN cart_button IS #pressed
+
+      WHEN Vegan Salad IS #pressed
+
+
+      deliver:
+
+      WHEN admin IS #pressed
+
+      THEN not delivered IS delivered
+
+
+      deliver and refresh page:
+
+      WHEN admin IS #pressed
+
+      WHEN View Orders IS #pressed
+
+      THEN not delivered IS delivered
+
+
+      add burger:
+
+      WHEN Menu IS #pressed
+
+      WHEN Order Subs IS #pressed
+
+      WHEN 55.00 IS #pressed
+
+
+      add pasta:
+
+      WHEN Menu IS #pressed
+
+      WHEN Order Pasta IS #pressed
+
+      WHEN $ 95.00 IS #pressed
+    testDesign: |
+      INITIAL STATE Not ordered
+      R1:
+        login => Logged in STATE Not ordered
+          R2:
+            add salad => 1 salad added STATE ordering
+              R221:
+                check count => the count is 1 STATE ordering
+              R222:
+                delete salad => empty card  STATE checked out 
+                  R223:
+                    check count => the count is 0 STATE ordering
+              R3:
+                add pasta => 1 pasta added STATE ordering
+                  R4:
+                    my card => 1 salad and 1 pasta in card STATE checking out
+                      R5:
+                        done => empty card STATE checked out
+                          R5001:
+                           check count => the count is 0 STATE checked out 
+                 
+                        
+                  R44:
+                    add burger => 1 burger added STATE ordering 
+                      R45:
+                        add platters => 1 platters added STATE ordering  
+                          R46:
+                            my card => 1 salad, 1 pasta, 1 burger and 1 platters in card STATE checking out
+                              R4661:
+                                done => empty card STATE checked out
+                                  R4662:
+                                    check count => the count is 0 STATE checked out 
+                      R47:
+                        my card => 1 salad, 1 platters and 1 burger in card STATE checking out  
+                          R4771:
+                            done => empty card STATE checked out
+                              R4772:
+                                check count => the count is 0 STATE checked out
+                  R6:
+                    add platters => 1 platters added STATE ordering
+                      R7:
+                        my card => 1 salad, 1 pasta and 1 platters in card STATE checking out 
+
+                      R47:  
+                        add pizza => 1 pizza added STATE ordering
+                          R48:
+                            my card => 1 salad, 1 pasta, 1 platters and 1 pizza in card STATE checking out 
+                      
+
+              R8:
+                add pizza => 1 pizza added STATE  ordering
+                  R9:
+                    add burger => 1 burger added STATE ordering
+                      R10:
+                        my card => 1 salad, 1 pizza and 1 burger in card STATE checking out 
+
+                  R50:
+                    add platters => 1 platters added STATE ordering 
+                        my card => 1 salad, 1 pizza and 1 platters in card STATE checking out 
+                    
+              R11:
+                add burger => 1 burger added STATE ordering 
+                  R12:
+                    add pasta => 1 pasta added STATE ordering 
+                      R13:
+                        add pizza => 1 pizza added STATE ordering 
+                          R14:
+                            my card => 1 salad, 1 burger, 1 pasta and 1 pizza in card STATE checking out
+                  R51:
+                    my card => 1 salad and 1 burger in card STATE checking out
+                    
+              R15:
+                add platters => 1 platters added STATE ordering 
+                  R151:
+                    check count => the count is 2 STATE ordering
+                  R152:
+                    delete platters => 1 salad in card  STATE checked out
+                      R153:
+                        check count => the count is 1 STATE ordering
+                      R154:
+                        check empty => not empty card STATE ordering
+                  R16:
+                    add burger => 1 burger added STATE ordering 
+                      R161:
+                        check count => the count is 3 STATE ordering
+                      R162:
+                        delete burger => 1 salad and 1 platters in card  STATE checked out
+                          R163:
+                            check count => the count is 2 STATE ordering
+                          R1631:
+                            check empty => not empty card STATE ordering
+                      R164:
+                        delete platters => 1 salad and 1 burger in card STATE checked out 
+                          R1641:
+                            check count => the count is 2 STATE checked out 
+                      R17:
+                        add pizza => 1 pizza added STATE ordering 
+                          R171:
+                            check count => the count is 4 STATE ordering
+                          R172:
+                            delete pizza => 1 salad, 1 platters and 1 burger in card  STATE checked out
+                              R173:
+                                check count => the count is 3 STATE ordering
+                              R174:
+                                check empty => not empty card STATE ordering
+                          R18:
+                            add pasta => 1 pasta added STATE ordering  
+                              R181:
+                                check count => the count is 5 STATE ordering
+                              R182:
+                                delete pasta => 1 salad, 1 platters, 1 burger and 1 pizza in card  STATE checked out
+                                  R183:
+                                    check count => the count is 4 STATE ordering
+                                  184:
+                                    check empty => not empty card STATE ordering
+                              R19:
+                                my card => 1 salad, 1 platters, 1 burger, 1 pizza and 1 pasta in card STATE checking out 
+                              R53:
+                                add salad => 1 salad added STATE ordering 
+                                  R1531:
+                                    check count => the count is 6 STATE ordering
+                                  R1532:
+                                    delete 2nd salad => 1 salad, 1 platters, 1 burger, 1 pizza and 1 pasta in card  STATE checked out
+                                      R15321:
+                                        delete pasta => 1 salad, 1 platters, 1 burger and 1 pizza in card  STATE checked out
+                                      R1533:
+                                        check count => the count is 5 STATE ordering
+                                      R1534:
+                                        check empty => not empty card STATE ordering
+                                  R54:
+                                    my card => 2 salad, 1 platters, 1 burger, 1 pizza and 1 pasta in card STATE checking out
+                                  
+                          R52:
+                            my card => 1 salad, 1 platters, 1 burger and 1 pizza in card STATE checking out
+              R20:
+                my card => 1 salad in card STATE checking out
+                  R201:
+                    check out => ordered STATE checked out
+                      R202:
+                        go to orders => deliver STATE delivered
+                      R203:
+                        go to orders => deliver and refresh page STATE delivered
+
+        
+          R105:
+            go to locations => gone to location page STATE location page
+              R106:
+                go to home => gone to home page STATE home page
+          R107:
+            go to hours => gone to hours page STATE hours page
+          R108:
+            go to contacts => gone to contacts page STATE contacts page
+          R109:
+            go to orders => gone to orders page STATE orders page
+          R111:
+            go to login => gone to login page STATE login page      
+        
+            
+      R100:
+        add pizza no auth => could not add STATE login page
+      R101:
+        add burger no auth => could not add STATE login page
+      R102:
+        add salad no auth => could not add STATE login page
+      R103:
+        add platters no auth => could not add STATE login page
+      R104:
+        add pasta no auth => could not add STATE login page
+    tests:
+      - name: T1 R1 – R2 – R221
+      - name: T2 R1 – R2 – R222 – R223
+      - name: T3 R1 – R2 – R3 – R4 – R5 – R5001
+      - name: T4 R1 – R2 – R3 – R44 – R45 – R46 – R4661 – R4662
+      - name: T5 R1 – R2 – R3 – R44 – R47 – R4771 – R4772
+      - name: T6 R1 – R2 – R3 – R6 – R7
+      - name: T7 R1 – R2 – R3 – R6 – R47 – R48
+      - name: T8 R1 – R2 – R8 – R9 – R10
+      - name: T9 R1 – R2 – R8 – R50
+      - name: T10 R1 – R2 – R11 – R12 – R13 – R14
+      - name: T11 R1 – R2 – R11 – R51
+      - name: T12 R1 – R2 – R15 – R151
+      - name: T13 R1 – R2 – R15 – R152 – R153
+      - name: T14 R1 – R2 – R15 – R152 – R154
+      - name: T15 R1 – R2 – R15 – R16 – R161
+      - name: T16 R1 – R2 – R15 – R16 – R162 – R163
+      - name: T17 R1 – R2 – R15 – R16 – R162 – R1631
+      - name: T18 R1 – R2 – R15 – R16 – R164 – R1641
+      - name: T19 R1 – R2 – R15 – R16 – R17 – R171
+      - name: T20 R1 – R2 – R15 – R16 – R17 – R172 – R173
+      - name: T21 R1 – R2 – R15 – R16 – R17 – R172 – R174
+      - name: T22 R1 – R2 – R15 – R16 – R17 – R18 – R181
+      - name: T23 R1 – R2 – R15 – R16 – R17 – R18 – R182 – R183
+      - name: T24 R1 – R2 – R15 – R16 – R17 – R18 – R182 – 184
+      - name: T25 R1 – R2 – R15 – R16 – R17 – R18 – R19
+      - name: T26 R1 – R2 – R15 – R16 – R17 – R18 – R53 – R1531
+      - name: T27 R1 – R2 – R15 – R16 – R17 – R18 – R53 – R1532 – R15321
+      - name: T28 R1 – R2 – R15 – R16 – R17 – R18 – R53 – R1532 – R1533
+      - name: T29 R1 – R2 – R15 – R16 – R17 – R18 – R53 – R1532 – R1534
+      - name: T30 R1 – R2 – R15 – R16 – R17 – R18 – R53 – R54
+      - name: T31 R1 – R2 – R15 – R16 – R17 – R52
+      - name: T32 R1 – R2 – R20 – R201 – R202
+      - name: T33 R1 – R2 – R20 – R201 – R203
+      - name: T34 R1 – R105 – R106
+      - name: T35 R1 – R107
+      - name: T36 R1 – R108
+      - name: T37 R1 – R109
+      - name: T38 R1 – R111
+      - name: T39 R100
+      - name: T40 R101
+      - name: T41 R102
+      - name: T42 R103
+      - name: T43 R104
+    attachments: []
+    engine: cypress
+ruleset: >
+  // The Ruleset contains the project-specific details of test code generation.
+  It is JSON with comments and trailing commas allowed.
+
+  {
+    /** This has to be 1. */
+    "version": 1,
+
+    /** Currently only cypress generator/runner is supported. Stay tuned! */
+    "runner": "cypress",
+
+    /** Options for the Cypress runner */
+    "cypressOptions": {
+      /** Cypress version */
+      "version": 10,
+
+      /** The attributes of elements that can contain the identifier for test automation */
+      "testIdAttribute": [
+        "id",
+        "data-testid",
+        "data-test",
+        "data-cy",
+        "data-harmony-id"
+      ],
+
+      /**
+       * Attribute names to use when generating selectors
+       */
+      "selectorAttributes": [
+        "name",
+        "id",
+        "for",
+        "action",
+        "alt",
+        "src",
+        "aria-label",
+        "data-icon"
+      ],
+
+      /**
+       * Attribute names to generate human-readable names for elements
+       */
+      "elementNameAttributes": [
+        "aria-label",
+        "name",
+        "title",
+        "placeholder",
+        "alt",
+        "for",
+        "id",
+        "data-icon"
+      ],
+
+      /** What to put at the beginning of the test files. */
+      "filePreamble": "// this file is generated by Harmony",
+
+      /**
+       * Semantics of WHEN <selector> IS <value>.
+       * The keys are CSS selectors that match an element
+       * The values are JS expressions with placeholders:
+       * %o is the cy chainer with the element selected
+       * %e is the the element itself
+       * %s is the value (a string expression)
+       * %% is replaced by %
+       */
+      "IS": {
+        "input,textarea": "%o.clear().type(%s)",
+        "[contenteditable=true]": "%o.clear().type(%s)",
+        "select": "%o.select(%s)"
+      },
+
+      /**
+       * Semantics of THEN <selector> IS <value>. It should be an assertion using Cypress's assertions.
+       * The keys are CSS selectors that match an element
+       * The values are JS expressions with placeholders:
+       * %o is the cy chainer with the element selected
+       * %e is the the element itself
+       * %s is the value (a string expression)
+       * %% is replaced by %
+       */
+      "SHOULD_BE": {
+        "input": "expect(%e).to.have.value(%s)",
+        "*": "expect(%e).to.have.text(%s)"
+      },
+
+      /**
+       * Semantics of IF <selector> IS <value>. It must be a boolean expression.
+       * The keys are CSS selectors that match an element
+       * The values are JS expressions with placeholders:
+       * %o is the cy chainer with the element selected
+       * %e is the the element itself
+       * %s is the value (a string expression)
+       * %% is replaced by %
+       */
+      "IF_IS": {
+        "input": "%e.val() === %s",
+        "*": "%e.text() === %s"
+      }
+    },
+
+    /**
+     * Semantics of normal selectors, hashtag selectors and prefixed selectors.
+     * Keys are hashtags, patterns like "prefix:*", or "*"
+     * Values can be:
+     * - a string (then code will be generated using IS/SHOULD_BE/IF_IS, and this code will be %o)
+     * - an object with optional keys WHEN, THEN, IF, with value maps as values.
+     *   Each of these is interpreted as the top-level WHEN/THEN/IF value maps, see there.
+     */
+    "objects": {
+      "#URL": {
+        "WHEN": {
+          "*": "cy.visit(%s)"
+        }
+      },
+      "#Session": {
+        "BEGIN": {
+          "*": "cy.session([%s], () => {\n%b\n    }); cy.visit('/')"
+        }
+      },
+      "#Origin": {
+        "BEGIN": {
+          "*": "cy.origin(%s, () => {\n%b\n    })"
+        }
+      },
+      "*": "cy.OBJ(%s)",
+      "css:*": "cy.get(%s)",
+      "id:*": "cy.get('#' + %s)",
+      "class:*": "cy.get(%s)",
+      "contains:*": "cy.contains(%s)"
+    },
+
+    /**
+     * Value maps for WHEN. It specifies the possible values after WHEN.
+     * Keys are value patterns: either "*" or "#hashtag" or "#hashtag *".
+     * Values are either
+     * - a string. The code to be generated. See code below.
+     * - an object with fields:
+     *    code: string. The code to be generated. It can contain placeholders:
+     *          %o is the cy chainer with the element selected
+     *          %e is the the element itself
+     *          %s is the value (a string expression)
+     *          %% is replaced by %
+     *
+     *    if: optional string. A CSS selector that has to match the element
+     *        to include this value pattern in the Inspector
+     *
+     *    arg: string. A JavaScript expression which tells what to substitute
+     *         for * when this value pattern is picked in the Inpsector.
+     *         It can contain placeholders:
+     *         %e: the element
+     */
+    "WHEN": {
+      "*": {
+        "code": "%o.IS(%s)",
+        "arg": { ":read-write,input:read-only,textarea": "%e.value" }
+      },
+      "#checked": "%o.check({ force: true })",
+      "#cleared": "%o.clear()",
+      "#clicked": "%o.click()",
+      "#focused": "%o.focus()",
+      "#forceClicked": "%o.click( {force:true} )",
+      "#forceTyped *": "%o.type(%s, {force:true})",
+      "#pressed": "%o.click()",
+      "#selected *": "%o.select(%s)",
+      "#selectFile *": "cy.get('input[type=file]').selectFile(%s,{ force: true })",
+      "#testRunId": "%o.IS(window._harmony_runId)",
+      "#typed *": "%o.type(%s)",
+      "#unchecked": "%o.uncheck({ force: true })",
+      /**
+       * "#scrolledIntoView": "%o.scrollIntoView()",
+       * "#screenshot": "%o.screenshot()",
+       */
+      "#waitToDisappear *": "%o.waitUntil(() => cy.$$(%s).length === 0)",
+
+      "#wait-2000": "cy.wait(2000)"
+    },
+    /**
+     * Value maps for WHEN. It specifies the possible values after THEN.
+     */
+   "THEN": {
+      "*": {
+        "code": "%o.SHOULD_BE(%s)",
+        "arg": { "input": "%e.value", "*": "%e.textContent" }
+      },
+    
+      "#caption *": "%o.should('attr.text', %s)",
+      "#checked": "%o.should('be.checked')",
+      "#contain *": "%o.should('contain', %s)",
+      "#disabled": "%o.should('be.disabled')",
+      "#enabled": "%o.should('not.be.disabled')",
+      "#eq *": { "code": "%o.should('eq', %s)" },
+      "#focused": "%o.should('have.focus')",
+      "#gt *": { "code": "%o.invoke('text').then(Number).should('be.gt', Number(%s))" },
+      "#include *": "%o.should('include', %s)",
+      "#label *": "%o.SHOULD_HAVE_LABEL(%s)",
+      "#lt *": { "code": "%o.invoke('text').then(Number).should('be.lt', Number(%s))" },
+      "#non-focused": "%o.should('not.have.focus')",
+      "#non-present": "%o.should('not.exist')",
+      "#non-visible": "%o.should('not.be.visible')",
+      "#present": "%o.should('exist')",
+      "#regexp *": "%o.contains(RegExp(%s))",
+
+      "#unchecked": "%o.should('not.be.checked')",
+      "#value *": "%o.should('have.value', %s)",
+      "#visible": "%o.should('be.visible')"
+      
+      /**
+       * "#maxlength": "%o.should('have.attr', 'maxlength')",
+       * "#maxlength *": "%o.invoke('attr', 'maxlength').should('eq', %s)",
+       * "#no-maxlength": "%o.should('not.have.attr', 'maxlength')",
+       * "#minlength": "%o.should('have.attr', 'minlength')",
+       * "#minlength *": "%o.invoke('attr', 'minlength').should('eq', %s)",
+       * "#no-minlength": "%o.should('not.have.attr', 'minlength')",
+       * "#placeholder": "%o.should('have.attr', 'placeholder')",
+       * "#placeholder *": "%o.invoke('attr', 'placeholder').should('eq', %s)",
+       * "#no-placeholder": "%o.should('not.have.attr', 'placeholder')",
+       * "#tooltip *": "%o.invoke('attr', 'title').should('eq', %s)",
+       */
+    },
+
+    /**
+     * Value map for IF
+     * code can (and should) also contain the following placeholder:
+     * %b is the code for the body of the conditional (things that only happen when the condition is true)
+     */
+    "IF": {
+      // here we add an empty .should() because otherwise Cypress will fail for the element not existing
+      "#present": "%o.should(() => { /* avoid default existence check */ })\n.IF($o => $o.length > 0, () => {\n%b\n    })",
+
+      // here we add an empty .should() because otherwise Cypress will give a wrong reason for failure
+      "#non-present": "%o.should(() => { /* avoid default existence check */ })\n.IF($o => $o.length == 0, () => {\n%b\n    })",
+
+      // the IS function is generated from IF_IS above
+      "*": "%o.IF($o => IS($o, %s), () => {\n%b\n    })"
+    },
+
+    /**
+     * What to do when a phrase starts.
+     * %s is the phrase
+     * %f is the feature name
+     */
+    "phrase": "cy.PHRASE(%s, %f)",
+
+    /**
+     * What to do for a missing phrase.
+     * %s is the phrase
+     * %f is the feature name
+     */
+    "missingPhrase": "cy.MISSING(%s, %f)",
+
+    /** Settings for the Inspector. */
+    "inspector": {
+      /** A CSS selector that if matches, the element will not be used, and instead its parent (if any) will be consiedered. */
+      "ignore": ":not(*)"
+    },
+
+    /**
+     * Gestures used in the Inspector.
+     * Keys are gesture names you can choose.
+     * Values are objects with fields:
+     *   command: "WHEN" or "THEN", what to insert (typically WHEN)
+     *   event: string, a DOM event type to listen for
+     *   value: a string or a { js: "..." } object with a JS expression with the following placeholders:
+     *          %e      the element
+     *          event   the event
+     *   only(optional): a CSS selector which if given, must match the event target
+     *   if(optional): a JS expession with the following placeholders:
+     *          %e      the element
+     *          event   the event
+     *   merge: An optional object that specifies how to merge it into a preceding gesture.
+     *          Keys are gesture names, the name of the preceding gesture.
+     *          If no key matches the preceding gesture, no merge happens.
+     *          Values are objects with fields:
+     *          type: "concat" or "suppress"
+     *            "concat" concatenates this gesture's value to the preceding gesture's and drops this one
+     *            "suppress" simply drops the preceding gesture
+     */
+    "gestures": {
+      "click": {
+        "command": "WHEN",
+        "event": "click",
+        "value": "#pressed",
+        "only": ":not(select,label,label *,input[type=checkbox])"
+      },
+      "check": {
+        "command": "WHEN",
+        "event": "click",
+        "value": "#checked",
+        "only": "input[type=checkbox]:not(:checked)"
+      },
+      "uncheck": {
+        "command": "WHEN",
+        "event": "click",
+        "value": "#unchecked",
+        "only": "input[type=checkbox]:checked"
+      },
+      "type": {
+        "command": "WHEN",
+        "event": "input",
+        "value": { "js": "%e.value || '#cleared'" },
+        "only": ":read-write",
+        "merge": {
+          "type": "suppress",
+          "click": "suppress"
+        }
+      },
+      "keydown": {
+        "command": "WHEN",
+        "event": "keydown",
+        "if": "event.key === 'Enter' || event.key === 'Tab'",
+        "only": "input",
+        "value": { "js": "'{' + (event.key||'').toLowerCase() + '}'" },
+        "merge": {
+          "type": "concat",
+        }
+      },
+      "rightclick": {
+        "command": "WHEN",
+        "event": "contextmenu",
+        "value": "#rightclicked"
+      },
+      "select": {
+        "command": "WHEN",
+        "event": "change",
+        "only": "select",
+        "value": { "js": "%e.value" }
+      }
+    }
+  }
+defaultEngine: cypress

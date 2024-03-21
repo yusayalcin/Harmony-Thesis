@@ -1,0 +1,914 @@
+projectName: ONLINE PIZZA
+description: THESIS
+sut: https://exercises.test-design.org/pizza/
+features:
+  - name: START
+    order: 0
+    description: ''
+    documentation: ''
+    categories: >-
+      B 1("css:[data-harmony-id=\"fresca + button\"] > b"): #pressed
+
+      Fresca number: 1; 2; 3; 4
+
+      B 2("css:[data-harmony-id=\"fresca X button\"] > b"): #pressed
+
+      Total price: 0; 54; 18; 3; 4; 22; 40; 58; 36; 72; 26; 44; 8; 76; 7; 57;
+      75; 25; 29; 43; 61; 11; 39; 65; 64; 21
+
+      B 3("css:[id=\"Beer + button\"] > b"): #pressed
+
+      Beer number: 1; 2
+
+      B 4("css:[data-harmony-id=\"Beer X button\"] > b"): #pressed
+
+      SPAN 1("css:#root > div > header:nth-child(2) > p:nth-child(3) >
+      span:nth-child(19)"): #contain Free beer added
+
+      free beer: #pressed
+
+      Coke + button: #pressed
+
+      Coke number: 1; 2
+
+      free coke: #pressed
+
+      Coke X button: #pressed
+
+      P 1("css:#root > div > header:nth-child(2) > p:nth-child(3)"): #contain
+      Free coke added
+    constraints: |
+
+
+      add pizza:
+      WHEN B 1 IS #pressed
+
+      1 pizza in the cart:
+      THEN Fresca number IS 1
+      THEN Total price IS 18
+
+      delete pizza:
+      WHEN B 2 IS #pressed
+
+      cart is empty:
+      THEN Total price IS 0
+
+      add beer:
+      WHEN B 3 IS #pressed
+
+      1 beer in the cart:
+      THEN Beer number IS 1
+      THEN Total price IS 4
+
+      delete beer:
+      WHEN B 4 IS #pressed
+
+      1 pizza and 1 beer in the cart:
+      THEN Fresca number IS 1
+      THEN Beer number IS 1
+      THEN Total price IS 22
+
+      2 pizza and 1 beer in the cart:
+      THEN Fresca number IS 2
+      THEN Beer number IS 1
+      THEN Total price IS 40
+
+
+      3 pizza and free 1 beer in the cart:
+      THEN Fresca number IS 3
+      THEN Beer number IS 1
+      THEN SPAN 1 IS #contain Free beer added
+      THEN Total price IS 54
+
+
+      3 pizza and 1 beer in the cart:
+      THEN Fresca number IS 3
+      THEN Beer number IS 1
+      THEN Total price IS 58
+
+      2 pizza in the cart:
+      THEN Fresca number IS 2
+      THEN Total price IS 36
+
+      3 pizza in the cart:
+      THEN Fresca number IS 3
+      THEN Total price IS 54
+
+      4 pizza in the cart:
+      THEN Fresca number IS 4
+      THEN Total price IS 72
+
+      add free beer:
+      WHEN free beer IS #pressed
+
+      1 pizza and 2 beer in the cart:
+      THEN Fresca number IS 1
+      THEN Beer number IS 2
+      THEN Total price IS 26
+
+
+      2 pizza and 2 beer in the cart:
+      THEN Fresca number IS 2
+      THEN Beer number IS 2
+      THEN Total price IS 44
+
+      2 beer in the cart:
+      THEN Beer number IS 2
+      THEN Total price IS 8
+
+      4 pizza and 1 beer in the cart:
+      THEN Fresca number IS 4
+      THEN Beer number IS 1
+      THEN Total price IS 76
+
+      add coke:
+      WHEN Coke + button IS #pressed
+
+      1 beer and 1 coke in the cart:
+      THEN Beer number IS 1
+      THEN Coke number IS 1
+      THEN Total price IS 7
+
+      1 coke in the cart:
+      THEN Coke number IS 1
+      THEN Total price IS 3
+
+      3 pizza and 1 coke in the cart:
+      THEN Fresca number IS 3
+      THEN Coke number IS 1
+      THEN Total price IS 57
+
+
+      4 pizza and 1 coke in the cart:
+      THEN Fresca number IS 4
+      THEN Coke number IS 1
+      THEN Total price IS 75
+
+      add free coke:
+      WHEN free coke IS #pressed
+
+
+      1 pizza, 1 beer and 1 coke in the cart:
+      THEN Fresca number IS 1
+      THEN Beer number IS 1
+      THEN Coke number IS 1
+      THEN Total price IS 25
+
+      1 pizza, 2 beer and 1 coke in the cart:
+      THEN Fresca number IS 1
+      THEN Beer number IS 2
+      THEN Coke number IS 1
+      THEN Total price IS 29
+
+      2 pizza, 1 beer and 1 coke in the cart:
+      THEN Fresca number IS 2
+      THEN Beer number IS 1
+      THEN Coke number IS 1
+      THEN Total price IS 43
+
+      delete coke:
+      WHEN Coke X button IS #pressed
+
+      3 pizza, 1 beer and 1 coke in the cart:
+      THEN Fresca number IS 3
+      THEN Beer number IS 1
+      THEN Coke number IS 1
+      THEN Total price IS 61
+
+      2 beer and 1 coke in the cart:
+      THEN Beer number IS 2
+      THEN Coke number IS 1
+      THEN Total price IS 11
+
+
+      1 pizza and 1 coke in the cart:
+      THEN Fresca number IS 1
+      THEN Coke number IS 1
+      THEN Total price IS 21
+
+
+      2 pizza and 1 coke in the cart:
+      THEN Fresca number IS 2
+      THEN Coke number IS 1
+      THEN Total price IS 39
+
+
+      3 pizza and free 1 coke in the cart:
+      THEN P 1 IS #contain Free coke added
+      THEN Fresca number IS 3
+      THEN Coke number IS 1
+      THEN Total price IS 54
+
+      3 pizza, free 1 coke and 1 coke in the cart:
+      THEN P 1 IS #contain Free coke added
+      THEN Fresca number IS 3
+      THEN Coke number IS 2
+      THEN Total price IS 57
+
+
+      3 pizza, 1 beer and free 1 coke in the cart:
+      THEN P 1 IS #contain Free coke added
+      THEN Fresca number IS 3
+      THEN Coke number IS 1
+      THEN Beer number IS 1
+      THEN Total price IS 58
+
+      3 pizza, free 1 beer, 1 beer and 1 coke in the cart:
+      THEN SPAN 1 IS #contain Free beer added
+      THEN Fresca number IS 3
+      THEN Coke number IS 1
+      THEN Beer number IS 2
+      THEN Total price IS 61
+
+
+
+      3 pizza, 1 beer, free 1 coke and 1 coke in the cart:
+      THEN P 1 IS #contain Free coke added
+      THEN Fresca number IS 3
+      THEN Coke number IS 2
+      THEN Beer number IS 1
+      THEN Total price IS 61
+
+
+      3 pizza, free 1 beer and 1 coke in the cart:
+      THEN SPAN 1 IS #contain Free beer added
+      THEN Fresca number IS 3
+      THEN Coke number IS 1
+      THEN Beer number IS 1
+      THEN Total price IS 57
+
+      3 pizza, free 1 beer and 1 beer in the cart:
+      THEN SPAN 1 IS #contain Free beer added
+      THEN Fresca number IS 3
+      THEN Beer number IS 2
+      THEN Total price IS 58
+
+
+      4 pizza and free 1 beer in the cart:
+      THEN SPAN 1 IS #contain Free beer added
+      THEN Fresca number IS 4
+      THEN Beer number IS 1
+      THEN Total price IS 72
+
+
+      4 pizza, free 1 beer and 1 coke in the cart:
+      THEN SPAN 1 IS #contain Free beer added
+      THEN Fresca number IS 4
+      THEN Coke number IS 1
+      THEN Beer number IS 1
+      THEN Total price IS 75
+
+
+      4 pizza, free 1 beer and 1 beer in the cart:
+      THEN SPAN 1 IS #contain Free beer added
+      THEN Fresca number IS 4
+      THEN Beer number IS 2
+      THEN Total price IS 76
+    useCases: |-
+      INITIAL STATE No offering
+      R1:
+       add pizza => 1 pizza in the cart STATE No offering
+          
+         R2:
+          delete pizza => cart is empty STATE No offering
+            R3:
+              add beer => 1 beer in the cart STATE No offering, beverage added
+               R4:
+                  delete beer => cart is empty STATE No offering
+                     R5:
+                      add beer => 1 beer in the cart STATE No offering, beverage added
+                  
+                     R6:
+                      add pizza => 1 pizza in the cart STATE No offering    
+               
+               R7:
+                  add pizza => 1 pizza and 1 beer in the cart STATE No offering, beverage added              
+                    R8:
+                     add pizza => 2 pizza and 1 beer in the cart STATE No offering, beverage added  
+                    
+                      R9:
+                       delete pizza => 1 beer in the cart STATE No offering, beverage added
+                          delete beer => cart is empty STATE No offering 
+                           add coke => 1 coke in the cart STATE No offering, beverage added  
+                              add beer => 1 beer in the cart STATE No offering, beverage added
+                       
+                        
+                                 
+                      R10: 
+                       add pizza => 3 pizza and free 1 beer in the cart STATE Offering, beer converted
+                         R11:
+                           add coke => 3 pizza, 1 beer and 1 coke in the cart STATE Offering, beer converted 
+                        
+
+                         R12:
+                           delete pizza => cart is empty STATE No offering 
+                             R13:
+                              add pizza => 1 pizza in the cart STATE No offering
+                                 add coke => 1 pizza and 1 coke in the cart STATE No offering, beverage added 
+                                  
+                             R14:         
+                              add beer => 1 beer in the cart STATE No offering, beverage added 
+                             R15:
+                              add coke => 1 coke in the cart STATE No offering, beverage added 
+
+                                         
+
+                         R16: 
+                           delete beer => 3 pizza in the cart STATE Offering, Choose free beer
+                             R17:
+                              add free beer => 3 pizza and free 1 beer in the cart STATE Offering, free beer added
+                                 add pizza => 4 pizza and 1 beer in the cart STATE Offering, free beer added
+                                    delete beer => 4 pizza in the cart STATE Offering, Choose free beer
+                                       add coke => 4 pizza and 1 coke in the cart STATE Offering, Choose free beer 
+                                          add free beer => 4 pizza, free 1 beer and 1 coke in the cart STATE Offering, free beer added 
+                             R18:
+                              add beer => 3 pizza and free 1 beer in the cart STATE Offering, free beer added 
+
+                      R19:    
+                       delete beer => 2 pizza in the cart STATE No offering 
+                        R20:
+                          add pizza => 3 pizza  in the cart STATE Offering, Choose free beer
+                              add coke => 3 pizza and 1 coke in the cart STATE Offering, Choose free beer 
+                                 add pizza => 4 pizza and 1 coke in the cart STATE Offering, Choose free beer
+                        R21:
+                          add pizza => 3 pizza in the cart STATE Offering, Choose free coke
+                              add free coke => 3 pizza and free 1 coke in the cart STATE Offering, free coke added
+                                R22:
+                                 add coke => 3 pizza, free 1 coke and 1 coke in the cart STATE Offering, free coke added
+                                    delete pizza => 1 coke in the cart STATE No offering, beverage added 
+                                       add pizza => 1 pizza and 1 coke in the cart STATE No offering, beverage added 
+                                          add pizza => 2 pizza and 1 coke in the cart STATE No offering, beverage added
+                                             add pizza => 3 pizza, free 1 coke and 1 coke in the cart STATE Offering, free coke added
+                                R23:
+                                 delete coke => 3 pizza in the cart STATE Offering, Choose free coke 
+                                    add beer => 3 pizza and 1 beer in the cart STATE Offering, Choose free coke
+                                       add free coke => 3 pizza, 1 beer and free 1 coke in the cart STATE Offering, free coke added 
+                              
+                                           
+                     
+                    R24:  
+                     add beer => 1 pizza and 2 beer in the cart STATE No offering, beverage added 
+                      R25:
+                       add pizza => 2 pizza and 2 beer in the cart STATE No offering, beverage added
+                          
+                      R26: 
+                       delete beer => 1 pizza in the cart  STATE No offering  
+                          delete pizza => cart is empty STATE No offering
+                         
+
+                      R27:
+                       delete pizza => 2 beer in the cart STATE No offering, beverage added
+                          add pizza => 1 pizza and 2 beer in the cart STATE No offering, beverage added
+                        
+                          
+                           
+                    R28:
+                     add coke => 1 pizza, 1 beer and 1 coke in the cart STATE No offering, beverage added 
+                       R29:
+                        add beer => 1 pizza, 2 beer and 1 coke in the cart STATE No offering, beverage added 
+                        
+                       R30:  
+                        add pizza => 2 pizza, 1 beer and 1 coke in the cart STATE No offering, beverage added
+                           add pizza => 3 pizza, 1 beer and 1 coke in the cart STATE Offering, Choose free beverage
+                             R31: 
+                              add free beer => 3 pizza, free 1 beer, 1 beer and 1 coke in the cart STATE Offering, free beer added
+                                R32:
+                                 delete pizza => 1 beer and 1 coke in the cart STATE No offering, beverage added 
+                                    delete beer => 1 coke in the cart STATE No offering, beverage added 
+                                R33:
+                                 delete coke => 3 pizza, free 1 beer and 1 beer in the cart STATE Offering, free beer added 
+                             R34:
+                              add free coke => 3 pizza, 1 beer, free 1 coke and 1 coke in the cart STATE Offering, free coke added 
+                                 delete pizza => 1 beer and 1 coke in the cart STATE No offering, beverage added 
+                                    delete beer => 1 coke in the cart STATE No offering, beverage added 
+                                       delete coke => cart is empty STATE No offering 
+                       R35:          
+                        delete coke => 1 pizza and 1 beer in the cart STATE No offering, beverage added 
+                                                          
+               R36:
+                  add coke => 1 beer and 1 coke in the cart STATE No offering, beverage added   
+
+            R37:                
+              add pizza => 1 pizza in the cart STATE No offering
+
+            R38:
+              add coke => 1 coke in the cart STATE No offering, beverage added 
+               R39:
+                  delete coke => cart is empty STATE No offering
+                    R40:
+                     add beer => 1 beer in the cart STATE No offering, beverage added
+                    R41:
+                     add coke => 1 coke in the cart STATE No offering, beverage added 
+                    R42:
+                     add pizza => 1 pizza in the cart STATE No offering 
+               R43:
+                  add pizza => 1 pizza and 1 coke in the cart STATE No offering, beverage added 
+                     add pizza => 2 pizza and 1 coke in the cart STATE No offering, beverage added 
+                        add pizza => 3 pizza and free 1 coke in the cart STATE Offering, coke converted  
+                     
+         R44:
+          add pizza => 2 pizza in the cart STATE No offering
+              add pizza => 3 pizza in the cart STATE Offering, Choose free coke 
+                 R45:
+                  add beer => 3 pizza and 1 beer in the cart STATE Offering, Choose free coke 
+                     delete pizza => 1 beer in the cart STATE No offering
+                 R46: 
+                  add pizza => 4 pizza in the cart STATE Offering, Choose free coke 
+                     add beer => 4 pizza and 1 beer in the cart STATE Offering, Choose free coke
+                 R47:      
+                  delete pizza => cart is empty  STATE No offering 
+                     add beer => 1 beer in the cart STATE No offering, beverage added
+              R48:            
+              add pizza => 3 pizza in the cart STATE Offering, Choose free beverage 
+                 R49:
+                  add free coke => 3 pizza and free 1 coke in the cart STATE Offering, free coke added
+                     delete coke => 3 pizza in the cart STATE Offering, Choose free coke 
+                        add pizza => 4 pizza in the cart STATE Offering, Choose free coke 
+                 
+                 R50:
+                  delete pizza => cart is empty STATE No offering
+                   R51:
+                      add coke => 1 coke in the cart STATE No offering, beverage added
+                  
+                   R52:
+                      add beer => 1 beer in the cart STATE No offering, beverage added
+                  
+                         
+                   R53:
+                      add pizza => 1 pizza in the cart STATE No offering
+                       R54:
+                          add beer => 1 pizza and 1 beer in the cart STATE No offering, beverage added
+                              delete pizza => 1 beer in the cart STATE No offering, beverage added 
+                      
+                           
+                       R55:
+                          add pizza => 2 pizza in the cart STATE No offering 
+                              add pizza => 3 pizza in the cart STATE Offering, Choose free beverage
+                               R56:
+                                  add free coke => 3 pizza and free 1 coke in the cart STATE Offering, free coke added 
+                                    delete coke => 3 pizza in the cart STATE Offering, Choose free coke
+                                      R57: 
+                                       add free coke => 3 pizza and free 1 coke in the cart STATE Offering, free coke added 
+                                      R58:
+                                       delete pizza => cart is empty  STATE No offering
+                                          add coke => 1 coke in the cart STATE No offering, beverage added 
+                          
+                                             
+                                             
+                               R59: 
+                                  add free beer => 3 pizza and free 1 beer in the cart STATE Offering, free beer added
+                                   R60:
+                                      add coke => 3 pizza, free 1 beer and 1 coke in the cart STATE Offering, free beer added 
+                                          delete pizza => 1 coke in the cart  STATE No offering, beverage added 
+                                            R61:
+                                             add beer => 1 beer and 1 coke in the cart STATE No offering, beverage added 
+                                                add beer => 2 beer and 1 coke in the cart STATE No offering, beverage added
+                                            R62: 
+                                             delete coke => cart is empty STATE No offering 
+                                          
+
+                                   R62:
+                                      delete beer => 3 pizza in the cart STATE Offering, Choose free beer
+                                          
+                                         R63:
+                                          add free beer => 3 pizza and free 1 beer in the cart STATE Offering, free beer added
+                                          
+
+                                             add beer => 3 pizza, free 1 beer and 1 beer in the cart STATE Offering, free beer added 
+                                                add coke => 3 pizza, free 1 beer, 1 beer and 1 coke in the cart STATE Offering, free beer added 
+                                                   delete coke => 3 pizza, free 1 beer and 1 beer in the cart STATE Offering, free beer added
+
+                                             
+                                                 
+                                         R64:
+                                          delete pizza => cart is empty STATE No offering
+                                             
+
+                                       
+                                         R65:
+                                          add pizza => 4 pizza in the cart STATE Offering, Choose free beer 
+                                            R66:
+                                              add free beer => 4 pizza and free 1 beer in the cart STATE Offering, free beer added
+                                                add coke => 4 pizza, free 1 beer and 1 coke in the cart STATE Offering, free beer added 
+                                                   delete beer => 4 pizza and 1 coke in the cart STATE Offering, Choose free beer
+                                              
+                                            R67:  
+                                              add coke => 4 pizza and 1 coke in the cart STATE Offering, Choose free beer 
+
+
+                                   R68:
+                                      delete pizza => cart is empty STATE No offering
+                                        R69: 
+                                         add beer => 1 beer in the cart STATE No offering, beverage added
+                                              add beer =>  2 beer in the cart STATE No offering, beverage added
+                                                add coke => 2 beer and 1 coke in the cart STATE No offering, beverage added     
+                                                                             
+                                        R70:
+                                         add coke => 1 coke in the cart STATE No offering, beverage added
+
+                                             
+
+                                        R71:                       
+                                         add pizza => 1 pizza in the cart STATE No offering
+                                         
+                                           
+                                   R72:
+                                    add pizza => 4 pizza and free 1 beer in the cart STATE Offering, free beer added 
+                                     R73:
+                                      add coke => 4 pizza, free 1 beer and 1 coke in the cart STATE Offering, free beer added 
+                                    
+
+
+                 R74:
+                  add free beer => 3 pizza and free 1 beer in the cart STATE Offering, free beer added
+                   
+                   R75:
+                    delete beer => 3 pizza in the cart STATE Offering, Choose free beer 
+                       add free beer => 3 pizza and free 1 beer in the cart STATE Offering, free beer added
+                           delete pizza => cart is empty STATE No offering 
+                    
+                         
+                   R76:
+                    add beer => 3 pizza, free 1 beer and 1 beer in the cart STATE Offering, free beer added
+                     R77:
+                      add pizza => 4 pizza, free 1 beer and 1 beer in the cart STATE Offering, free beer added
+                        delete pizza => 1 beer in the cart  STATE No offering 
+                      
+                     R78:
+                      delete beer => 3 pizza in the cart STATE Offering, Choose free beer
+                     R79:
+                      delete pizza => 1 beer in the cart STATE No offering, beverage added 
+                        add pizza => 1 pizza and 1 beer in the cart STATE No offering, beverage added 
+                           add pizza => 2 pizza and 1 beer in the cart STATE No offering, beverage added 
+                              add pizza => 3 pizza, free 1 beer and 1 beer in the cart STATE Offering, free beer added 
+
+                      
+    tests:
+      - name: T1 R1 – R2 – R3 – R4 – R5
+      - name: T2 R1 – R2 – R3 – R4 – R6
+      - name: T3 R1 – R2 – R3 – R7 – R8 – R9
+      - name: T4 R1 – R2 – R3 – R7 – R8 – R10 – R11
+      - name: T5 R1 – R2 – R3 – R7 – R8 – R10 – R12 – R13
+      - name: T6 R1 – R2 – R3 – R7 – R8 – R10 – R12 – R14
+      - name: T7 R1 – R2 – R3 – R7 – R8 – R10 – R12 – R15
+      - name: T8 R1 – R2 – R3 – R7 – R8 – R10 – R16 – R17
+      - name: T9 R1 – R2 – R3 – R7 – R8 – R10 – R16 – R18
+      - name: T10 R1 – R2 – R3 – R7 – R8 – R19 – R20
+      - name: T11 R1 – R2 – R3 – R7 – R8 – R19 – R21 – R22
+      - name: T12 R1 – R2 – R3 – R7 – R8 – R19 – R21 – R23
+      - name: T13 R1 – R2 – R3 – R7 – R24 – R25
+      - name: T14 R1 – R2 – R3 – R7 – R24 – R26
+      - name: T15 R1 – R2 – R3 – R7 – R24 – R27
+      - name: T16 R1 – R2 – R3 – R7 – R28 – R29
+      - name: T17 R1 – R2 – R3 – R7 – R28 – R30 – R31 – R32
+      - name: T18 R1 – R2 – R3 – R7 – R28 – R30 – R31 – R33
+      - name: T19 R1 – R2 – R3 – R7 – R28 – R30 – R34
+      - name: T20 R1 – R2 – R3 – R7 – R28 – R35
+      - name: T21 R1 – R2 – R3 – R36
+      - name: T22 R1 – R2 – R37
+      - name: T23 R1 – R2 – R38 – R39 – R40
+      - name: T24 R1 – R2 – R38 – R39 – R41
+      - name: T25 R1 – R2 – R38 – R39 – R42
+      - name: T26 R1 – R2 – R38 – R43
+      - name: T27 R1 – R44 – R45
+      - name: T28 R1 – R44 – R46
+      - name: T29 R1 – R44 – R47
+      - name: T30 R1 – R44 – R48
+      - name: T31 R1 – R44 – R49
+      - name: T32 R1 – R44 – R50 – R51
+      - name: T33 R1 – R44 – R50 – R52
+      - name: T34 R1 – R44 – R50 – R53 – R54
+      - name: T35 R1 – R44 – R50 – R53 – R55 – R56 – R57
+      - name: T36 R1 – R44 – R50 – R53 – R55 – R56 – R58
+      - name: T37 R1 – R44 – R50 – R53 – R55 – R59 – R60 – R61
+      - name: T38 R1 – R44 – R50 – R53 – R55 – R59 – R60 – R62
+      - name: T39 R1 – R44 – R50 – R53 – R55 – R59 – R62 – R63
+      - name: T40 R1 – R44 – R50 – R53 – R55 – R59 – R62 – R64
+      - name: T41 R1 – R44 – R50 – R53 – R55 – R59 – R62 – R65 – R66
+      - name: T42 R1 – R44 – R50 – R53 – R55 – R59 – R62 – R65 – R67
+      - name: T43 R1 – R44 – R50 – R53 – R55 – R59 – R68 – R69
+      - name: T44 R1 – R44 – R50 – R53 – R55 – R59 – R68 – R70
+      - name: T45 R1 – R44 – R50 – R53 – R55 – R59 – R68 – R71
+      - name: T46 R1 – R44 – R50 – R53 – R55 – R59 – R72 – R73
+      - name: T47 R1 – R44 – R74 – R75
+      - name: T48 R1 – R44 – R74 – R76 – R77
+      - name: T49 R1 – R44 – R74 – R76 – R78
+      - name: T50 R1 – R44 – R74 – R76 – R79
+    attachments: []
+ruleset: >
+  // The Ruleset contains the project-specific details of test code generation.
+  It is JSON with comments and trailing commas allowed.
+
+  {
+    /** This has to be 1. */
+    "version": 1,
+
+    /** Currently only cypress generator/runner is supported. Stay tuned! */
+    "runner": "cypress",
+
+    /** Options for the Cypress runner */
+    "cypressOptions": {
+      /** Cypress version */
+      "version": 10,
+
+      /** The attributes of elements that can contain the identifier for test automation */
+      "testIdAttribute": [
+        "id",
+        "data-testid",
+        "data-test",
+        "data-cy",
+        "data-harmony-id"
+      ],
+
+      /**
+       * Attribute names to use when generating selectors
+       */
+      "selectorAttributes": [
+        "name",
+        "id",
+        "for",
+        "action",
+        "alt",
+        "src",
+        "aria-label",
+        "data-icon"
+      ],
+
+      /**
+       * Attribute names to generate human-readable names for elements
+       */
+      "elementNameAttributes": [
+        "aria-label",
+        "name",
+        "title",
+        "placeholder",
+        "alt",
+        "for",
+        "id",
+        "data-icon"
+      ],
+
+      /** What to put at the beginning of the test files. */
+      "filePreamble": "// this file is generated by Harmony",
+
+      /**
+       * Semantics of WHEN <selector> IS <value>.
+       * The keys are CSS selectors that match an element
+       * The values are JS expressions with placeholders:
+       * %o is the cy chainer with the element selected
+       * %e is the the element itself
+       * %s is the value (a string expression)
+       * %% is replaced by %
+       */
+      "IS": {
+        "input,textarea": "%o.clear().type(%s)",
+        "[contenteditable=true]": "%o.clear().type(%s)",
+        "select": "%o.select(%s)"
+      },
+
+      /**
+       * Semantics of THEN <selector> IS <value>. It should be an assertion using Cypress's assertions.
+       * The keys are CSS selectors that match an element
+       * The values are JS expressions with placeholders:
+       * %o is the cy chainer with the element selected
+       * %e is the the element itself
+       * %s is the value (a string expression)
+       * %% is replaced by %
+       */
+      "SHOULD_BE": {
+        "input": "expect(%e).to.have.value(%s)",
+        "*": "expect(%e).to.have.text(%s)"
+      },
+
+      /**
+       * Semantics of IF <selector> IS <value>. It must be a boolean expression.
+       * The keys are CSS selectors that match an element
+       * The values are JS expressions with placeholders:
+       * %o is the cy chainer with the element selected
+       * %e is the the element itself
+       * %s is the value (a string expression)
+       * %% is replaced by %
+       */
+      "IF_IS": {
+        "input": "%e.val() === %s",
+        "*": "%e.text() === %s"
+      }
+    },
+
+    /**
+     * Semantics of normal selectors, hashtag selectors and prefixed selectors.
+     * Keys are hashtags, patterns like "prefix:*", or "*"
+     * Values can be:
+     * - a string (then code will be generated using IS/SHOULD_BE/IF_IS, and this code will be %o)
+     * - an object with optional keys WHEN, THEN, IF, with value maps as values.
+     *   Each of these is interpreted as the top-level WHEN/THEN/IF value maps, see there.
+     */
+    "objects": {
+      "#URL": {
+        "WHEN": {
+          "*": "cy.visit(%s)"
+        }
+      },
+      "#Session": {
+        "BEGIN": {
+          "*": "cy.session([%s], () => {\n%b\n    }); cy.visit('/')"
+        }
+      },
+      "#Origin": {
+        "BEGIN": {
+          "*": "cy.origin(%s, () => {\n%b\n    })"
+        }
+      },
+      "*": "cy.OBJ(%s)",
+      "css:*": "cy.get(%s)",
+      "id:*": "cy.get('#' + %s)",
+      "class:*": "cy.get(%s)",
+      "contains:*": "cy.contains(%s)"
+    },
+
+    /**
+     * Value maps for WHEN. It specifies the possible values after WHEN.
+     * Keys are value patterns: either "*" or "#hashtag" or "#hashtag *".
+     * Values are either
+     * - a string. The code to be generated. See code below.
+     * - an object with fields:
+     *    code: string. The code to be generated. It can contain placeholders:
+     *          %o is the cy chainer with the element selected
+     *          %e is the the element itself
+     *          %s is the value (a string expression)
+     *          %% is replaced by %
+     *
+     *    if: optional string. A CSS selector that has to match the element
+     *        to include this value pattern in the Inspector
+     *
+     *    arg: string. A JavaScript expression which tells what to substitute
+     *         for * when this value pattern is picked in the Inpsector.
+     *         It can contain placeholders:
+     *         %e: the element
+     */
+    "WHEN": {
+      "*": {
+        "code": "%o.IS(%s)",
+        "arg": { ":read-write,input:read-only,textarea": "%e.value" }
+      },
+      "#checked": "%o.check()",
+      "#cleared": "%o.clear()",
+      "#focused": "%o.focus()",
+      "#forcePressed": "%o.click( {force:true} )",
+      "#forceTyped *": "%o.type(%s, {force:true})",
+      "#pressed": "%o.click()",
+      "#testRunId": "%o.IS(window._harmony_runId)",
+
+      "#selected *": { "code": "%o.select(%s)", "arg": { "select": "%e.value" } },
+      "#selectFile *": "cy.get('input[type=file]').selectFile(%s,{ force: true })",
+      "#typed *": "%o.type(%s)",
+      "#unchecked": "%o.uncheck()",
+      /**
+       * "#scrolledIntoView": "%o.scrollIntoView()",
+       * "#screenshot": "%o.screenshot()",
+       */
+      "#waitToDisappear *": "%o.waitUntil(() => cy.$$(%s).length === 0)",
+
+      "#wait-2000": "cy.wait(2000)"
+    },
+    /**
+     * Value maps for WHEN. It specifies the possible values after THEN.
+     */
+    "THEN": {
+      "*": {
+        "code": "%o.SHOULD_BE(%s)",
+        "arg": { "input": "%e.value", "*": "%e.textContent" }
+      },
+      "#active": "%o.should('not.be.disabled')",
+      "#caption *": "%o.should('attr.text', %s)",
+      "#checked": "%o.should('be.checked')",
+      "#contain *": "%o.should('contain', %s)",
+      "#eq *": { "code": "%o.should('eq', %s)" },
+      "#focused": "%o.should('have.focus')",
+      "#gt *": { "code": "%o.should('be.gt', Number(%s))" },
+      "#gtText *": {
+        "code": "%o.invoke('text').then(parseInt).should('gt', Number(%s))"
+      },
+      "#include *": "%o.should('include', %s)",
+      "#label *": "%o.SHOULD_HAVE_LABEL(%s)",
+      "#lt *": { "code": "%o.should('be.lt', Number(%s))" },
+      "#non-active": "%o.should('be.disabled')",
+      "#non-focused": "%o.should('not.have.focus')",
+      "#non-present": "%o.should('not.exist')",
+      "#present": "%o.should('exist')",
+      "#regexp *": "%o.contains(RegExp(%s))",
+
+      "#unchecked": "%o.should('not.be.checked')",
+      "#value *": "%o.should('have.value', %s)"
+
+      /**
+       * "#maxlength": "%o.should('have.attr', 'maxlength')",
+       * "#maxlength *": "%o.invoke('attr', 'maxlength').should('eq', %s)",
+       * "#no-maxlength": "%o.should('not.have.attr', 'maxlength')",
+       * "#minlength": "%o.should('have.attr', 'minlength')",
+       * "#minlength *": "%o.invoke('attr', 'minlength').should('eq', %s)",
+       * "#no-minlength": "%o.should('not.have.attr', 'minlength')",
+       * "#placeholder": "%o.should('have.attr', 'placeholder')",
+       * "#placeholder *": "%o.invoke('attr', 'placeholder').should('eq', %s)",
+       * "#no-placeholder": "%o.should('not.have.attr', 'placeholder')",
+       * "#tooltip *": "%o.invoke('attr', 'title').should('eq', %s)",
+       */
+    },
+
+    /**
+     * Value map for IF
+     * code can (and should) also contain the following placeholder:
+     * %b is the code for the body of the conditional (things that only happen when the condition is true)
+     */
+    "IF": {
+      // here we add an empty .should() because otherwise Cypress will fail for the element not existing
+      "#present": "%o.should(() => { /* avoid default existence check */ })\n.IF($o => $o.length > 0, () => {\n%b\n    })",
+
+      // here we add an empty .should() because otherwise Cypress will give a wrong reason for failure
+      "#non-present": "%o.should(() => { /* avoid default existence check */ })\n.IF($o => $o.length == 0, () => {\n%b\n    })",
+
+      // the IS function is generated from IF_IS above
+      "*": "%o.IF($o => IS($o, %s), () => {\n%b\n    })"
+    },
+
+    /**
+     * What to do when a phrase starts.
+     * %s is the phrase
+     * %f is the feature name
+     */
+    "phrase": "cy.PHRASE(%s, %f)",
+
+    /**
+     * What to do for a missing phrase.
+     * %s is the phrase
+     * %f is the feature name
+     */
+    "missingPhrase": "cy.MISSING(%s, %f)",
+
+    /** Settings for the Inspector. */
+    "inspector": {
+      /** A CSS selector that if matches, the element will not be used, and instead its parent (if any) will be consiedered. */
+      "ignore": ":not(*)"
+    },
+
+    /**
+     * Gestures used in the Inspector.
+     * Keys are gesture names you can choose.
+     * Values are objects with fields:
+     *   command: "WHEN" or "THEN", what to insert (typically WHEN)
+     *   event: string, a DOM event type to listen for
+     *   value: a string or a { js: "..." } object with a JS expression with the following placeholders:
+     *          %e      the element
+     *          event   the event
+     *   only(optional): a CSS selector which if given, must match the event target
+     *   if(optional): a JS expession with the following placeholders:
+     *          %e      the element
+     *          event   the event
+     *   merge: An optional object that specifies how to merge it into a preceding gesture.
+     *          Keys are gesture names, the name of the preceding gesture.
+     *          If no key matches the preceding gesture, no merge happens.
+     *          Values are objects with fields:
+     *          type: "concat" or "suppress"
+     *            "concat" concatenates this gesture's value to the preceding gesture's and drops this one
+     *            "suppress" simply drops the preceding gesture
+     */
+    "gestures": {
+      "click": {
+        "command": "WHEN",
+        "event": "click",
+        "value": "#pressed",
+        "only": ":not(select)"
+      },
+      "type": {
+        "command": "WHEN",
+        "event": "input",
+        "value": { "js": "%e.value || '#cleared'" },
+        "only": ":read-write",
+        "merge": {
+          "type": "suppress",
+          "click": "suppress"
+        }
+      },
+      "keydown": {
+        "command": "WHEN",
+        "event": "keydown",
+        "if": "event.key === 'Enter' || event.key === 'Tab'",
+        "only": "input",
+        "value": { "js": "'{' + (event.key||'').toLowerCase() + '}'" },
+        "merge": {
+          "type": "concat",
+        }
+      },
+      "rightclick": {
+        "command": "WHEN",
+        "event": "contextmenu",
+        "value": "#rightclicked"
+      },
+      "select": {
+        "command": "WHEN",
+        "event": "change",
+        "only": "select",
+        "value": { "js": "%e.value" }
+      }
+    }
+  }

@@ -1,0 +1,1 @@
+cypress open --project . --e2e --browser chrome
